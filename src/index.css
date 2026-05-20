@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-primary-red: #e01b22;
+  --color-dark-surface: #0a0a0a;
+  --color-dark-card: #141414;
+}
+
+@layer utilities {
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Glassmorphism card utility */
+  .glass-card {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(30, 30, 30, 0.85);
+    border-color: rgba(224, 27, 34, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(224, 27, 34, 0.15);
+    transform: translateY(-4px);
+  }
+
+  /* Custom Red Pulse Glow */
+  .glow-red {
+    box-shadow: 0 0 20px rgba(224, 27, 34, 0.35);
+  }
+
+  .glow-text-red {
+    text-shadow: 0 0 10px rgba(224, 27, 34, 0.6);
+  }
+
+  /* Custom styling for sleek custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(224, 27, 34, 0.3);
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(224, 27, 34, 0.6);
+  }
+
+  /* Custom scrolling animation helper */
+  .animate-infinite-scroll {
+    animation: infinite-scroll 40s linear infinite;
+  }
+  .animate-infinite-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}

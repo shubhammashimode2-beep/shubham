@@ -1,0 +1,6 @@
+{
+  "name": "AB Health & Fitness",
+  "description": "Premium fitness experience in Latur, Maharashtra. Features standard weight training, cardio, and personalized plans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
